@@ -1,17 +1,22 @@
 <template>
-  <div class="side-bar">
-    <ul>
-      <li v-for="(item,index) in titles" :key="index"
-          :class="{active: currentIndex === index}"
-          @click="titlesClick(index)">{{item.title}}</li>
-    </ul>
-  </div>
+  <scroll id="content">
+    <div class="side-bar">
+      <ul>
+        <li v-for="(item,index) in titles" :key="index"
+            :class="{active: currentIndex === index}"
+            @click="titlesClick(index)">{{item.title}}</li>
+      </ul>
+    </div>
+  </scroll>
 </template>
 
 <script>
+
+import Scroll from "../scroll/Scroll";
 export default {
   name: "SideBar",
   components: {
+    Scroll
   },
   props: {
     titles: {
@@ -36,6 +41,11 @@ export default {
 </script>
 
 <style scoped>
+#content {
+  height: 100%;
+  width: 87px;
+  overflow: hidden;
+}
 .side-bar {
   width: 87px;
 }

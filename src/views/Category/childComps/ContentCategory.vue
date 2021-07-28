@@ -28,10 +28,10 @@ export default {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .content-item {
-  width: 45%;
+  width: 30%;
   text-align: center;
 }
 .content-item img {
